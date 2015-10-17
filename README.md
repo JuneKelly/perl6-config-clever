@@ -67,5 +67,4 @@ say %config
 
 ## Todo
 
-- full heirarchy of files
-- array merge (replace)
+- more tests
