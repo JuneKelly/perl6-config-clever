@@ -8,6 +8,5 @@ A clever, heirarchical config loader for perl6.
 use v6;
 use Config::Clever;
 
-my $config = Config::Clever.load();
-
+my $config = Config::Clever::load('production');
 ```
