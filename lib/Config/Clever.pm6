@@ -20,12 +20,12 @@ our &load is export = sub (:$environment = "default", :$config-dir = "./config")
 }
 
 our &hash-merge is export = sub (%one, %two) {
-    sub walk (%a, %b) {
-        for %b.kv -> $k, $v {
+    sub walk (%left, %right) {
+        for %right.kv -> $k, $v {
             if $v ~~ Hash {
-                walk(%a{$k}, $v);
+                walk(%left{$k}, $v);
             } else {
-                %a{$k} = $v;
+                %left{$k} = $v;
             }
         }
     }
