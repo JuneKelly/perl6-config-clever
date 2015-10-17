@@ -7,6 +7,7 @@ our &load is export = sub (:$environment = "default", :$config-dir = "./config")
     my @paths = (
         "$config-dir/default.json",
         "$config-dir/$environment.json"
+        "$config-dir/local-$environment.json"
     );
     for @paths -> $path {
         if "$path".IO ~~ :e {
