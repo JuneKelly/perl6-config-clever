@@ -1,0 +1,9 @@
+{
+  "name"        : "Config::Clever",
+  "version"     : "0.1.0",
+  "description" : "A clever, heirarchical config loader",
+  "provides"    : {
+    "Config::Clever"       : "lib/Config/Clever.pm6"
+  },
+  "source-url"  : ""
+}
