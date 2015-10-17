@@ -8,5 +8,5 @@ plan 2;
 use Config::Clever;
 ok 1, "'use Config::Clever' worked";
 
-my $result = Config::Clever::load('production');
-ok $result == 42, "load works";
+my $result = Config::Clever::load();
+ok $result == %(one => 1, two => 2), "load works";
