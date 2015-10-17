@@ -4,7 +4,7 @@ A clever, heirarchical config loader for perl6.
 
 ## Config files
 
-Config::Clever loads json files from the `config/` directory. The json objects are loaded and merged together in the following order:
+`Config::Clever::load` takes a String `environment` parameter and loads json files from the `config/` directory. The json objects are loaded and merged together in the following order:
 
 - `default.json`
 - `<environment>.json`
