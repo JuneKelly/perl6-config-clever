@@ -32,7 +32,6 @@ $result = Config::Clever::hash-merge(
     %(one => 1,
       two => %(three => 3))
 );
-
 ok $result == %(one => 1,
                 two => %(three => 3),
                 four => 4), "hash merge works on more complex value";
