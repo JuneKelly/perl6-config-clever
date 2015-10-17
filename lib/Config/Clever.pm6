@@ -23,6 +23,9 @@ our &hash-merge is export = sub (%one, %two) {
     sub walk (%left, %right) {
         for %right.kv -> $k, $v {
             if $v ~~ Hash {
+                if %left{$k} ~~ Any {
+                    %left{$k} = %();
+                }
                 walk(%left{$k}, $v);
             } else {
                 %left{$k} = $v;

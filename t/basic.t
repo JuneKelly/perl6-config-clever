@@ -14,8 +14,12 @@ $result = Config::Clever::load();
 ok $result == %(one => 1, two => 2), "load works";
 
 $result = Config::Clever::load(:environment('production'));
-ok $result == %(one => 1, two => 22), "production load works";
-
+ok $result == %(
+    one => 1,
+    two => 22,
+    three => %(four => 4),
+    five => 5
+    ), "production load works";
 
 # test hash-merge
 $result = Config::Clever::hash-merge( %(), %(one => 1) );
