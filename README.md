@@ -10,3 +10,8 @@ use Config::Clever;
 
 my $config = Config::Clever::load(:environment('production'));
 ```
+
+## Todo
+
+- full heirarchy of files
+- array merge (replace)
