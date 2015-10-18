@@ -6,5 +6,5 @@
   "provides"    : {
     "Config::Clever"       : "lib/Config/Clever.pm6"
   },
-  "source-url"  : "https://github.com/ShaneKilkelly/perl6-config-clever"
+  "source-url"  : "git://github.com/ShaneKilkelly/perl6-config-clever.git"
 }
