@@ -3,7 +3,7 @@ use v6;
 BEGIN { @*INC.unshift('lib') };
 
 use Test;
-plan 5;
+plan 6;
 
 use Config::Clever;
 ok 1, "'use Config::Clever' worked";
@@ -20,6 +20,24 @@ ok $result == %(
     three => %(four => 4),
     five => 5
     ), "production load works";
+
+# test more advanced usage
+$result = Config::Clever::load(:environment("production"),
+                               :config-dir("t/advanced-config"));
+ok $result == %(
+    web => %(
+        port => 8080,
+        secret => "a_real_good_secret",
+        logLevel => "WARN"
+    ),
+    db => %(
+        host => "db.example.com",
+        port => 27017,
+        auth => True,
+        user => "someuser",
+        password => "password"
+    )), "advanced example works";
+
 
 # test hash-merge
 $result = Config::Clever::hash-merge( %(), %(one => 1) );
