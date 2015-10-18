@@ -6,15 +6,15 @@ A clever, heirarchical config loader for perl6.
 
 ## Config files
 
-`Config::Clever::load` takes a String `environment` parameter and loads json files from the `config/` directory. The json objects are loaded and merged together in the following order:
+`Config::Clever.load` takes a String `environment` parameter and loads json files from the `config/` directory. The json objects are loaded and merged together in the following order:
 
 - `default.json`
 - `<environment>.json`
 - `local-<environment>.json`
 
-Calling `Config::Clever::load` without any parameters will use `default` as the environment. You can also supply a path to another config directory:
+Calling `Config::Clever.load` without any parameters will use `default` as the environment. You can also supply a path to another config directory:
 ```perl6
-my %config = Config::Clever::load(:environment("staging"), :config-dir("./my/weird/path"));
+my %config = Config::Clever.load(:environment("staging"), :config-dir("./my/weird/path"));
 ```
 
 ## Example
@@ -44,14 +44,14 @@ Imagine we have a directory `config`, with two files: `default.json` and `develo
 }
 ```
 
-If we call `Config::Clever::load`, we'll get a hash which consists of the data from
+If we call `Config::Clever.load`, we'll get a hash which consists of the data from
 `development.json` merged on top of the data in `default.json`.
 
 ```perl6
 use v6;
 use Config::Clever;
 
-my %config = Config::Clever::load(:environment('development'));
+my %config = Config::Clever.load(:environment('development'));
 say %config
 # %config is a hash equivalent to:
 #   {
