@@ -1,8 +1,8 @@
 use v6;
 use JSON::Tiny;
-unit module Config::Clever;
+unit class Config::Clever;
 
-our &load is export = sub (:$environment = "default", :$config-dir = "./config") {
+method load (:$environment = "default", :$config-dir = "./config") {
     my %config;
     my @paths = (
         "$config-dir/default.json",

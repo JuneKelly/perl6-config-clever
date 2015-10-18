@@ -10,10 +10,10 @@ ok 1, "'use Config::Clever' worked";
 
 my $result;
 
-$result = Config::Clever::load();
+$result = Config::Clever.load();
 ok $result == %(one => 1, two => 2), "load works";
 
-$result = Config::Clever::load(:environment('production'));
+$result = Config::Clever.load(:environment('production'));
 ok $result == %(
     one => 1,
     two => 22,
@@ -22,7 +22,7 @@ ok $result == %(
     ), "production load works";
 
 # test more advanced usage
-$result = Config::Clever::load(:environment("production"),
+$result = Config::Clever.load(:environment("production"),
                                :config-dir("t/advanced-config"));
 ok $result == %(
     web => %(
