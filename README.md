@@ -70,3 +70,4 @@ say %config
 ## Todo
 
 - more tests
+- support more file formats such as `ini`, `yaml` and `toml`
